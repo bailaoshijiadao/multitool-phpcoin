@@ -6,6 +6,7 @@ apt install mysql-server git screen htop -y
 
 mysql -e "create database phpcoin;"
 mysql -e "create user 'phpcoin'@'localhost' identified by 'phpcoin';"
+mysql -e "grant all privileges on phpcoin.* to 'phpcoin'@'localhost';"
 mysql -e "FLUSH PRIVILEGES;"
 
 wget https://phpcoin.net/download/blockchain.sql.zip -O blockchain.sql.zip
