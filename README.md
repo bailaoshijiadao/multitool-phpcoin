@@ -4,4 +4,4 @@
 ```bash -i <(curl -s https://gitee.com/bailaoshijiadao/multitool-phpcoin/raw/main/phpcoin.sh)```
 <br><br>
 国外VPS输入以下命令<br>
-```bash -i <(curl -s https://gitee.com/bailaoshijiadao/multitool-phpcoin/raw/main/phpcoin.sh)```
+```bash -i <(curl -s https://raw.githubusercontent.com/bailaoshijiadao/multitool-phpcoin/master/phpcoin.sh)```
