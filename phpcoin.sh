@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "PHPCoin node Installation"
+echo "PHPCoin main-node Installation"
 apt update
 apt install apache2 php libapache2-mod-php php-mysql php-gmp php-bcmath php-curl unzip -y
 apt install mysql-server git screen htop -y
@@ -8,9 +8,6 @@ mysql -e "create database phpcoin;"
 mysql -e "create user 'phpcoin'@'localhost' identified by 'phpcoin';"
 mysql -e "grant all privileges on phpcoin.* to 'phpcoin'@'localhost';"
 mysql -e "FLUSH PRIVILEGES;"
-
-wget https://phpcoin.net/download/blockchain.sql.zip -O blockchain.sql.zip
-unzip -o blockchain.sql.zip
 
 mkdir /var/www/phpcoin
 cd /var/www/phpcoin
@@ -39,6 +36,10 @@ if [ ! -f "$CONFIGFILE" ]; then
   sed -i "s/ENTER-DB-PASS/phpcoin/g" config/config.inc.php
 fi
 
+cd
+wget https://phpcoin.net/download/blockchain.sql.zip -O blockchain.sql.zip
+read -rp "请在浏览器输入IP地址，打开网页，看到页面显示内容后再回车继续"
+unzip -o blockchain.sql.zip
 echo "PHPCoin: configure node"
 mkdir tmp
 mkdir web/apps
@@ -46,14 +47,8 @@ chown -R www-data:www-data tmp
 chown -R www-data:www-data web/apps
 mkdir dapps
 chown -R www-data:www-data dapps
-
-cp -R /root/blockchain.sql /var/www/phpcoin/tmp
-
 cd /var/www/phpcoin
-
-read -rp "请浏览器输入IP地址，打开网页，看到页面显示内容后再回车继续 "
-
-php cli/util.php importdb tmp/blockchain.sql
+php cli/util.php importdb /root/blockchain.sql
 php cli/util.php download-apps
 
 cd /var/www/phpcoin/scripts
