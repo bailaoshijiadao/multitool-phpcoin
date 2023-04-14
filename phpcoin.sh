@@ -36,21 +36,23 @@ if [ ! -f "$CONFIGFILE" ]; then
   sed -i "s/ENTER-DB-PASS/phpcoin/g" config/config.inc.php
 fi
 
-cd
-wget https://phpcoin.net/download/blockchain.sql.zip -O blockchain.sql.zip
-read -rp "请在浏览器输入IP地址，打开网页，看到页面显示内容后再回车继续"
-unzip -o blockchain.sql.zip
 echo "PHPCoin: configure node"
+cd /var/www/phpcoin
 mkdir tmp
 mkdir web/apps
 chown -R www-data:www-data tmp
 chown -R www-data:www-data web/apps
 mkdir dapps
 chown -R www-data:www-data dapps
-cd /var/www/phpcoin
-php cli/util.php importdb /root/blockchain.sql
 php cli/util.php download-apps
-
 cd /var/www/phpcoin/scripts
 chmod +x install_update.sh
 ./install_update.sh
+
+cd
+wget https://phpcoin.net/download/blockchain.sql.zip -O blockchain.sql.zip
+read -rp "请在浏览器输入IP地址，打开网页，看到页面显示内容后再回车继续"
+unzip -o blockchain.sql.zip
+cd /var/www/phpcoin
+php cli/util.php importdb /root/blockchain.sql
+
