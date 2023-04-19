@@ -56,3 +56,35 @@ unzip -o blockchain.sql.zip
 cd /var/www/phpcoin
 php cli/util.php importdb /root/blockchain.sql
 
+
+CRON_LINE="cat /dev/null >  /var/www/phpcoin/tmp/phpcoin.log"
+CRON_EXISTS=$(crontab -l | grep "$CRON_LINE" | wc -l)
+if [ $CRON_EXISTS -eq 0 ]
+then
+	crontab -l | { cat; echo "*/3600 * * * * $CRON_LINE"; } | crontab -
+	echo "定时清除日志任务创建成功"
+else
+	echo "定时清除日志任务已有"
+fi
+
+CRON_LINE="cd /var/www/phpcoin && php cli/util.php update"
+CRON_EXISTS=$(crontab -l | grep "$CRON_LINE" | wc -l)
+
+if [ $CRON_EXISTS -eq 0 ]
+then
+	crontab -l | { cat; echo "*/5 * * * * $CRON_LINE"; } | crontab -
+	echo "定时升级创建成功"
+else
+	echo "定时升级已有"
+fi
+
+CRON_LINE="mysql -e \"RESET MASTER\""
+CRON_EXISTS=$(crontab -l | grep "$CRON_LINE" | wc -l)
+
+if [ $CRON_EXISTS -eq 0 ]
+then
+	crontab -l | { cat; echo "*/3600 * * * * $CRON_LINE"; } | crontab -
+	echo "定时清除mysql日志创建成功"
+else
+	echo "定时清除mysql日志已有"
+fi
