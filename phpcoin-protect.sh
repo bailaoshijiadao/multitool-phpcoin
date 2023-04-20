@@ -57,3 +57,6 @@ else
 	echo "定时检测mysql已有"
 fi
 
+sed -i "s/# max_connections/max_connections/g" /etc/mysql/mysql.conf.d/mysqld.cnf
+sed -i "s/151/999999/g" /etc/mysql/mysql.conf.d/mysqld.cnf
+service mysql restart
