@@ -21,7 +21,7 @@ else
 	echo "定时升级已有"
 fi
 
-CRON_LINE="mysql -e \"RESET MASTER\""
+CRON_LINE="mysql -e \"RESET MASTER;\""
 CRON_EXISTS=$(crontab -l | grep "$CRON_LINE" | wc -l)
 
 if [ $CRON_EXISTS -eq 0 ]
