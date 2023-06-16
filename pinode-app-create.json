@@ -1,5 +1,10 @@
 {
   "name": "pinode-app-create",
   "version": "1.0.0",
-  "author": "bailaoshijiadao"
+  "author": "bailaoshijiadao",
+  "upgrade_url":"",
+  "upgrade_zipsize":"",
+  "pinode_app_create_url":"",
+  "pinode_app_create_zipsize":"",
+  "md5":""
 }
