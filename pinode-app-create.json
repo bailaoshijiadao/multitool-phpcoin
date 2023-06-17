@@ -1,13 +1,13 @@
 {
   "name": "pinode-app-create",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "bailaoshijiadao",
-  "upgrade_url":"",
-  "upgrade_zipsize":"",
-  "pinode_app_create_url":"",
-  "pinode_app_create_zipsize":"",
+  "upgrade_url":"https://wwcc.lanzoub.com/ishWG0zeiepc",
+  "pinode_app_create_url":"https://wwcc.lanzoub.com/iBFHK0zeieob",
+  "upgrade_zipsize":"3412688",
+  "pinode_app_create_zipsize":"14487220",
   "auth_code":{
-	  "pi08":"5C988312BF2D84614843C6FD459BD482"
+	  "test":"927830DEB66F205CA438B03BA73284CB"
   },
-  "md5":""
+  "md5":"c10a763df67aa53881cdb203577d5193"
 }
