@@ -6,5 +6,8 @@
   "upgrade_zipsize":"",
   "pinode_app_create_url":"",
   "pinode_app_create_zipsize":"",
+  "auth_code":{
+	  "pi08":"5C988312BF2D84614843C6FD459BD482"
+  },
   "md5":""
 }
