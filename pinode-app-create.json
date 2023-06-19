@@ -3,13 +3,13 @@
   "version": "1.0.1",
   "author": "bailaoshijiadao",
   "upgrade_url":"https://wwcc.lanzoub.com/iIo7V0zfc5ve",
-  "pinode_app_create_url":"https://wwcc.lanzoub.com/iub5K0zidxni",
+  "pinode_app_create_url":"https://wwcc.lanzoub.com/iBgoL0zjrsdi",
   "upgrade_zipsize":"3413808",
-  "pinode_app_create_zipsize":"14501213",
+  "pinode_app_create_zipsize":"14496939",
   "auth_code":{
 	  "test1":"927830DEB66F205CA438B03BA73284CB",
 	  "test2":"5C988312BF2D84614843C6FD459BD482",
-	  "pi010" :"68C2948FF267DF7AE724F975428B4807"
+	  "pi010":"68C2948FF267DF7AE724F975428B4807"
   },
-  "md5":"3f9576577da6df48d8e29c75beefebf7"
+  "md5":"627dc1206b46c59a961a3f6dce8850f5"
 }
